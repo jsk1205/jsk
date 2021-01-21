@@ -13,11 +13,20 @@ import Center from '@/pages/Center'
 import MyOrder from '@/pages/Center/MyOrder'
 import GroupBuy from '@/pages/Center/GroupBuy'
 import store from '@/store'
+import newModel from '@/components/Header/newModel'
 export default [
   //创建路由器
   {
     path: '/',
     component: Home
+  },
+  {
+    path:'/newModel',
+    name:'newModel',
+    component:newModel,
+    meta: {
+      isHideFooter: true //标识footer是否隐藏
+    },
   },
   {
     name: 'search', //使用params参数时需要指定此名称
@@ -54,12 +63,15 @@ export default [
   {
     path: '/shopcart',
     component: ShopCart,
+    meta:{
+      isHideFooter:true
+    }
   },
   {
     path: '/register',
     component: Register,
     meta: {
-      isHideFooter: true //标识footer是否隐藏
+      isHideFooter: true, //标识footer是否隐藏
     }
   },
   {
@@ -133,7 +145,10 @@ export default [
       { // 配置一个自动重定向的路由
         // path: '/center',
         path: '',
-        redirect: '/center/myorder'
+        redirect: '/center/myorder',
+        meta:{
+          isHideFooter:true
+        }
       }
     ]
   },

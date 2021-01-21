@@ -76,6 +76,7 @@ import throttle from "lodash/throttle"; //按需打包
 
 export default {
   name: "TypeNav",
+  // 我是左侧列表分类相关
   data() {
     //在data里面读不到$route.path
     return {
@@ -97,7 +98,7 @@ export default {
       // console.log('dataset',dataset)
       const { categoryname, category1id, category2id, category3id } = dataset;
       if (categoryname) {
-        //跳转路由携带quert参数
+        //跳转路由携带query参数
         const query = { categoryName: categoryname };
         if (category1id) {
           query.category1Id = category1id;

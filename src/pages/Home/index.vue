@@ -25,6 +25,7 @@ import ListContainer from './today/ListContainer'
 import Like from "./today/Like"
 import Floor from './today/Floor'
 import Rank from './today/Rank'
+import TypeNav from '@/components/TypeNav'
 import {mapState} from 'vuex'
 export default {
   name: "Home",
@@ -39,11 +40,13 @@ export default {
     })
   },
   components:{
+    TypeNav,
     TodayRecommend,
     ListContainer,
     Like,
     Floor,
-    Rank
+    Rank,
+    
 
     
   }

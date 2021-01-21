@@ -19,7 +19,8 @@
         <div class="typeList">
           <router-link to="/center/myorder" >我的订单</router-link>
           <router-link to="/shopcart">我的购物车</router-link>
-          <a href="###">我的尚品汇</a>
+          <!-- <a href="###">我的尚品汇</a> -->
+          <span @click="THREES()">我的尚品汇</span>
           <a href="###">尚品汇会员</a>
           <a href="###">企业采购</a>
           <a href="###">关注尚品汇</a>
@@ -29,7 +30,7 @@
       </div>
     </div>
     <!--头部第二行 搜索区域-->
-    <div class="bottom">
+    <div class="bottom"  v-if="isHideHead">
       <h1 class="logoArea">
         <a class="logo" title="尚品汇" href="###" target="_blank">
           <img src="./images/Logo.png" alt />
@@ -51,7 +52,8 @@ export default {
   name: "Header",
   data() {
     return {
-      keyword: ""
+      keyword: "",
+      isHideHead:false
     };
   },
   computed: {
@@ -66,6 +68,9 @@ export default {
     });
   },
   methods: {
+    THREES(){
+      this.$router.push({path:'/newModel'})
+    },
     async logout() {
       try {
         await this.$store.dispatch("logout");

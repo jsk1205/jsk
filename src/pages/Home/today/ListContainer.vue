@@ -91,10 +91,14 @@
 <script>
 
 import { mapState } from "vuex"; //读取状态
+import Carousel from '@/components/Carousel'
 //创建swiper对象必须要在轮播列表页面显示之后执行才可以-->否则有问题(轮播)
 //可以写在mounted里面
 export default {
   name: "ListContainer",
+  components:{
+    Carousel
+  },
   computed: {
     ...mapState({
       banners: state => state.home.banners

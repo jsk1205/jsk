@@ -12,7 +12,7 @@ const actions={//异步action发送数据
     async getProductList({commit},searchParams){
       //过滤属性值为空串的属性
       // Object.keys:得到对象本身所有属性名的数组
-      // Object.value
+      // Object.values
       Object.keys(searchParams).forEach(key=>{
         if (searchParams[key]==='') {
           delete searchParams[key]//组件中的options也改变了

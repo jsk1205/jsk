@@ -55,7 +55,7 @@
       </div>
     </div>
     <!-- 底部 -->
-    <div class="copyright">
+    <div class="copyright" v-if="isHide">
       <ul>
         <li>关于我们</li>
         <li>联系我们</li>
@@ -80,7 +80,8 @@ export default {
   data() {
     return {
       mobile: '',
-      password: ''
+      password: '',
+      isHide:false
     }
   },
   methods: {
