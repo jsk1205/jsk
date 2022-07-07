@@ -1,0 +1,71 @@
+{
+    "msg": "操作成功",
+    "code": 200,
+    "data": [
+        {
+            "id": "c1c5cb9f-fdc5-4806-bb80-772837326da2",
+            "tag": "meta",
+            "value": [
+                {
+                    "id": "332b464a-da2f-edfe-a330-86bcce205e74",
+                    "data": "标识顶级节点"
+                }
+            ]
+        },
+        {
+            "id": "6c23905f-4b16-4a20-a708-57a9877897c1",
+            "tag": "task",
+            "value": [
+                {
+                    "id": "f898b852-6da4-247c-fcc6-350130b5d306",
+                    "data": "任务task0602"
+                }
+            ],
+            "parent": {
+                "id": "c1c5cb9f-fdc5-4806-bb80-772837326da2"
+            }
+        },
+        {
+            "id": "da8dce7d-5cc8-472a-a4a5-69fbebb03955",
+            "tag": "table",
+            "value": [
+                {
+                    "id": "24217e80-7f9a-0753-44f9-a09b47d12c34",
+                    "data": "app_node_requ_d"
+                }
+            ],
+            "parent": {
+                "id": "6c23905f-4b16-4a20-a708-57a9877897c1"
+            }
+        },
+        {
+            "id": "ff541212-c579-4d0e-b47d-f1c1013a1c96",
+            "tag": "base",
+            "value": [
+                {
+                    "id": "f6f2e771-158a-651a-34c1-922a0a0a335e",
+                    "data": "测试0318"
+                },
+                {
+                    "id": "5e79bb08-0958-db33-2ef9-e74ff623655a",
+                    "data": "测试16"
+                },
+                {
+                    "id": "28a1e851-ea38-8bee-49bb-9b95775af897",
+                    "data": "节点统计请求量_失效"
+                },
+                {
+                    "id": "8857446f-ecbf-c9b1-fedd-878ae8424266",
+                    "data": "审批不通过测试"
+                },
+                {
+                    "id": "76d19294-c9de-6161-077d-12bb487dd7ad",
+                    "data": "节点统计请求量"
+                }
+            ],
+            "parent": {
+                "id": "da8dce7d-5cc8-472a-a4a5-69fbebb03955"
+            }
+        }
+    ]
+}
