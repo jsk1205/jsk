@@ -1,5 +1,5 @@
 <template>
-    <div>threemode1</div>
+    <div>loginmana</div>
 </template>
 <script>
 export default {

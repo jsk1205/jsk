@@ -2,29 +2,39 @@
   <div class="wrapper">
     <!-- 页头 -->
     <div class="header">
-      <div class="logo">后台管理系统</div>
+      <div class="logo">等离子体层密度数据库系统</div>
       <!-- 水平菜单 -->
       <div style="float: left">
+        <!-- active-text-color="#3989fa" -->
         <el-menu
           mode="horizontal"
           text-color="#000000"
-          active-text-color="#3989fa"
           :default-active="toIndex"
           @select="handleSelect"
         >
-          <el-menu-item
-            v-for="(item, index) in itemList"
-            :index="item.path"
-            :key="index"
-          >
-            <span slot="title">{{ item.title }}</span>
-          </el-menu-item>
+          <template v-for="(item, index) in itemList">
+            <template v-if="item.children">
+              <el-submenu :key="index" :index="item.path">
+                <template slot="title">{{ item.title }}</template>
+                <template v-for="(items, indexs) in item.children">
+                  <el-menu-item :index="items.path" :key="indexs">{{
+                    items.title
+                  }}</el-menu-item>
+                </template>
+              </el-submenu>
+            </template>
+            <template v-else>
+              <el-menu-item :index="item.path" :key="index">
+                <span slot="title">{{ item.title }}</span>
+              </el-menu-item>
+            </template>
+          </template>
         </el-menu>
       </div>
       <div class="header-right">
         <div class="header-user-con">
           <!-- 用户头像 -->
-          <div class="uesr-avator">
+          <div class="user-avator">
             <img src="" alt="" />
           </div>
           <!-- 用户名下拉菜单 -->
@@ -44,6 +54,7 @@
         </div>
       </div>
     </div>
+    <TagsView> </TagsView>
     <!-- 页面左侧二级菜单栏，主体内容区域 -->
     <el-main>
       <router-view></router-view>
@@ -51,18 +62,39 @@
   </div>
 </template>
 <script>
+import TagsView from "./TagsView/index.vue";
 export default {
   name: "Home",
+  components: {
+    TagsView,
+  },
   data() {
     return {
       itemList: [
         // 水平一级菜单栏的菜单
         { path: "/Home", title: "首页" },
-        { path: "/FormGenerator", title: "Form Generator" },
-        { path: "/EchartsTable", title: "Echarts图表" },
-        { path: "/EchartsRela", title: "Echarts关系" },
-        { path: "/ThreeMode", title: "Three建模" },
-        { path: "/permission", title: "管理员权限" },
+        { path: "/DataCollect", title: "数据收集" },
+        { path: "/DataSort", title: "数据整理" },
+        { path: "/DataRetrieval", title: "数据检索" },
+        {
+          path: "/DisSubsystem",
+          title: "显示分系统",
+          children: [
+            { path: "/DisMess", title: "统计信息" },
+            { path: "/SysMess", title: "系统信息" },
+          ],
+        },
+        {
+          path: "/System",
+          title: "系统管理",
+          children: [
+            { path: "/DataMana", title: "数据管理" },
+            { path: "/LoginMana", title: "登陆日志" },
+            { path: "/UserMana", title: "用户管理" },
+            { path: "/RoleMana", title: "角色管理" },
+            { path: "/MenuMana", title: "菜单管理" },
+          ],
+        },
       ],
     };
   },
@@ -86,15 +118,20 @@ export default {
         });
       }
     },
-    handleSelect(path) {
+    handleSelect(key, keyPath) {
+      let index = keyPath[0];
       this.$router.push({
-        path: path,
+        path: keyPath.length > 1 ? index + key : index,
       });
     },
   },
 };
 </script>
 <style lang="scss" scoped>
+.el-main {
+  padding: 0 !important;
+  border-radius: 4px;
+}
 .wrapper {
   width: 100%;
   height: 100%;
@@ -106,15 +143,15 @@ export default {
   width: 100%;
   height: 60px;
   font-size: 22px;
-  background-color: #b3c0d1;
-  color: #333;
+  background-color: #288ce2;
   .logo {
     float: left;
-    margin-left: 60px;
+    // margin-left: 60px;
     margin-top: 17.5px;
     height: 29px;
-    width: 160px;
+    // width: 160px;
     vertical-align: middle;
+    color: #fff;
   }
 
   /* --------------- 用户头像区域的样式 ---------------- */
@@ -127,13 +164,12 @@ export default {
       justify-content: center;
       height: 60px;
       .user-avator {
-        margin-left: 20px;
-      }
-      .user-avator img {
-        display: block;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+        img {
+          display: block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
       }
     }
     .user-name {
@@ -153,14 +189,27 @@ export default {
     float: left;
     margin-left: 50px;
     background: transparent;
+    .el-menu-item {
+      color: #fff !important;
+    }
+    ::v-deep .el-submenu__title {
+      color: #fff !important;
+      background: #288ce2 !important;
+      i {
+        color: #fff !important;
+      }
+    }
   }
   .el-menu--horizontal > .el-menu-item.is-active {
-    /* border-bottom: 2px solid #3989fa;
-  color: #3989fa; */
     font-weight: bold;
+    background: #396db0;
+    color: none;
+  }
+  .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
+    background: #396db0;
   }
   .el-menu--horizontal > .el-menu-item {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 15px;
   }
 }

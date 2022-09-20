@@ -1,15 +1,7 @@
 <template>
-  <div class="content-box">
-    <div class="container">
-      <p>关系图</p>
-      <div v-show="nodeData.length" v-cloak class="container-list">
-        <div class="container-item">
-          <span id="chart1" style="width: 1280px; height: 500px"></span>
-        </div>
-      </div>
-      <div v-show="!nodeData.length" class="container-Bot">
-        <h5>暂无数据</h5>
-      </div>
+  <div>
+    <div>
+      <p>数据检索</p>
     </div>
   </div>
 </template>
@@ -80,7 +72,7 @@ export default {
             indexObj.task++;
             this.nodeData.push({
               x: 400,
-              y: 60 ,
+              y: 60,
               name: valueItem.data,
               symbol: legend2,
               draggable: true,
@@ -186,8 +178,8 @@ export default {
 .container-list {
   width: 100%;
   margin: 0 auto;
-  .container-item{
-    margin-top:100px;
+  .container-item {
+    margin-top: 100px;
   }
 }
 .container-Bot {

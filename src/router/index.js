@@ -11,59 +11,59 @@ const routes = [
         path: '/', // 程序启动默认路由
         component: () => import('@/components/Whole.vue'),
         meta: {
-            title: '整体页面布局'
+            title: '首页'
         },
-        redirect: '/Home', // 重定向到首页
+        redirect: '/Login', // 重定向到首页
         children: [
             {
                 path: '/Home',
-                component: () => import('@/views/Home.vue'),
+                component: () => import('@/views/home.vue'),
                 meta: {
                     title: '首页'
                 }
             },
             {
-                path: '/FormGenerator',
-                component: () => import('@/views/FormGenerator/index.vue'),
+                path: '/DataCollect',
+                component: () => import('@/views/DataCollect/index.vue'),
                 meta: {
-                    title: '一级菜单1'
+                    title: '数据收集'
                 },
-                redirect: '/FormGenerator/FormGenerator-1', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
+                redirect: '/DataCollect/DataCollect', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
                 children: [
                     {
-                        path: 'FormGenerator-1',
-                        component: () => import('@/views/FormGenerator/test1.vue'),
+                        path: 'DataCollect',
+                        component: () => import('@/views/DataCollect/test1.vue'),
                         meta: {
-                            title: '二级菜单1-1'
+                            title: '数据收集'
                         },
                     },
-                    {
-                        path: 'FormGenerator-2',
-                        component: () => import('@/views/FormGenerator/test2.vue'),
-                        meta: {
-                            title: '二级菜单1-2'
-                        },
-                    },
+                    // {
+                    //     path: 'DataCollect-2',
+                    //     component: () => import('@/views/DataCollect/test2.vue'),
+                    //     meta: {
+                    //         title: '二级菜单1-2'
+                    //     },
+                    // },
                 ]
             },
             {
-                path: '/EchartsTable',
-                component: () => import('@/views/EchartsTable/index.vue'),
+                path: '/DataSort',
+                component: () => import('@/views/DataSort/index.vue'),
                 meta: {
                     title: '一级菜单2'
                 },
-                redirect: '/EchartsTable/EchartsTable-1', // 该配置是若点击选择父目录时，默认选中该父目录下的子路径页面
+                redirect: '/DataSort/DataSort-1', // 该配置是若点击选择父目录时，默认选中该父目录下的子路径页面
                 children: [
                     {
-                        path: 'EchartsTable-1',
-                        component: () => import('@/views/EchartsTable/test1.vue'),
+                        path: 'DataSort-1',
+                        component: () => import('@/views/DataSort/test1.vue'),
                         meta: {
                             title: '二级菜单2-1'
                         },
                     },
                     {
-                        path: 'EchartsTable-2',
-                        component: () => import('@/views/EchartsTable/test2.vue'),
+                        path: 'DataSort-2',
+                        component: () => import('@/views/DataSort/test2.vue'),
                         meta: {
                             title: '二级菜单2-2'
                         },
@@ -71,23 +71,23 @@ const routes = [
                 ]
             },
             {
-                path: '/EchartsRela',
-                component: () => import('@/views/EchartsRela/index.vue'),
+                path: '/DataRetrieval',
+                component: () => import('@/views/DataRetrieval/index.vue'),
                 meta: {
                     title: '一级菜单3'
                 },
-                redirect: '/EchartsRela/EchartsRela-1',
+                redirect: '/DataRetrieval/DataRetrieval-1',
                 children: [
                     {
-                        path: 'EchartsRela-1',
-                        component: () => import('@/views/EchartsRela/test1.vue'),
+                        path: 'DataRetrieval-1',
+                        component: () => import('@/views/DataRetrieval/test1.vue'),
                         meta: {
                             title: '二级菜单3-1'
                         }
                     },
                     {
-                        path: 'EchartsRela-2',
-                        component: () => import('@/views/EchartsRela/test2.vue'),
+                        path: 'DataRetrieval-2',
+                        component: () => import('@/views/DataRetrieval/test2.vue'),
                         meta: {
                             title: '二级菜单3-2'
                         }
@@ -95,37 +95,74 @@ const routes = [
                 ]
             },
             {
-                path: '/ThreeMode',
-                component: () => import('@/views/ThreeMode/index.vue'),
+                path: '/DisSubsystem',
+                component: () => import('@/views/DisSubsystem/index.vue'),
                 meta: {
-                    title: '国际化'
+                    title: '显示分系统'
                 },
-                redirect: '/ThreeMode/ThreeMode-1',
+                redirect: '/DisSubsystem/DisMess',
                 children: [
                     {
-                        path: 'ThreeMode-1',
-                        component: () => import('@/views/ThreeMode/test1.vue'),
+                        path: 'DisMess',
+                        component: () => import('@/views/DisSubsystem/DisMess.vue'),
                         meta: {
-                            title: '二级菜单4-1'
+                            title: '统计信息'
                         }
                     },
                     {
-                        path: 'ThreeMode-2',
-                        component: () => import('@/views/ThreeMode/test2.vue'),
+                        path: 'SysMess',
+                        component: () => import('@/views/DisSubsystem/SysMess.vue'),
                         meta: {
-                            title: '二级菜单4-2'
+                            title: '系统信息'
                         }
                     },
                 ]
             },
             {
-                path: '/permission', // 权限页面
-                component: () => import('@/views/Permission.vue'),
+                path: '/System', // 权限页面
+                component: () => import('@/views/System/index.vue'),
                 meta: {
                     title: '权限测试',
                     permission: true
                 },
-                
+                redirect: '/System/DataMana',
+                children: [
+                    {
+                        path: 'DataMana',
+                        component: () => import('@/views/System/DataMana.vue'),
+                        meta: {
+                            title: '数据管理'
+                        }
+                    },
+                    {
+                        path: 'LoginMana',
+                        component: () => import('@/views/System/LoginMana.vue'),
+                        meta: {
+                            title: '登陆日志'
+                        }
+                    },
+                    {
+                        path: 'UserMana',
+                        component: () => import('@/views/System/UserMana.vue'),
+                        meta: {
+                            title: '用户管理'
+                        }
+                    },
+                    {
+                        path: 'RoleMana',
+                        component: () => import('@/views/System/RoleMana.vue'),
+                        meta: {
+                            title: '角色管理'
+                        }
+                    },
+                    {
+                        path: 'MenuMana',
+                        component: () => import('@/views/System/MenuMana.vue'),
+                        meta: {
+                            title: '菜单管理'
+                        }
+                    },
+                ]
             },
             {
                 path: '/404',
@@ -150,10 +187,10 @@ const routes = [
             title: '登录'
         }
     },
-    // {
-    //     path: '*',
-    //     redirect: '/404'
-    // }
+    {
+        path: '/',
+        redirect: '/Home'
+    }
 ]
 export default new VueRouter({
     mode: 'history',

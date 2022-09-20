@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- 一级菜单下所拥有的二级菜单 -->
-    <el-aside>
+    <!-- <el-aside>
       <SideMenu :itemList="itemList" />
-    </el-aside>
+    </el-aside> -->
     <!-- 以及二级菜单所对应的页面 -->
     <el-main>
       <router-view></router-view>
@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       itemList: [
-        { path: "ThreeMode-1", title: "二级菜单4-1" },
-        { path: "ThreeMode-2", title: "二级菜单4-2" },
+        { path: "DataCollect", title: "数据收集" },
+        // { path: "DataCollect-2", title: "二级菜单1-2" },
       ],
     };
   },

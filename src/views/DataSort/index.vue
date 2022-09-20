@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- 一级菜单下所拥有的二级菜单 -->
-    <el-aside>
+    <!-- <el-aside>
       <SideMenu :itemList="itemList" />
-    </el-aside>
+    </el-aside> -->
     <!-- 以及二级菜单所对应的页面 -->
     <el-main>
       <router-view></router-view>
@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       itemList: [
-        { path: "FormGenerator-1", title: "二级菜单1-1" },
-        { path: "FormGenerator-2", title: "二级菜单1-2" },
+        { path: "DataSort-1", title: "二级菜单2-1" },
+        { path: "DataSort-2", title: "二级菜单2-2" },
       ],
     };
   },

@@ -1,5 +1,5 @@
 <template>
-    <div>threemode2</div>
+    <div>menumana</div>
 </template>
 <script>
 export default {
