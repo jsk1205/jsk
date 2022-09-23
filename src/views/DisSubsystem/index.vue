@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       itemList: [
-        { path: "DisMess", title: "统计信息" },
-        { path: "SysMess", title: "系统信息" },
+        { path: "disSubDisMess", title: "统计信息" },
+        { path: "disSubSysMess", title: "系统信息" },
       ],
     };
   },

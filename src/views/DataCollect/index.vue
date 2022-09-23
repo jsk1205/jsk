@@ -20,8 +20,7 @@ export default {
   data() {
     return {
       itemList: [
-        { path: "DataCollect", title: "数据收集" },
-        // { path: "DataCollect-2", title: "二级菜单1-2" },
+        { path: "dataColllist", title: "数据整理" }
       ],
     };
   },

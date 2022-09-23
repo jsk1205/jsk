@@ -15,15 +15,19 @@
 </template>
 <script>
 import store from "@/store";
+import { mapGetters, mapState } from "vuex";
 export default {
   name: "App",
   data() {
     return {};
   },
   computed: {
+    ...mapState({
+      loading: (state) => state.app.loading,
+    }),
   },
   mounted(){
-    // console.log(this.$store.state.app.loading,'----')
+    console.log(this.loading,'----')
   }
 };
 </script>

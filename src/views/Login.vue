@@ -101,31 +101,42 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           this.loading = true;
-          this.$router.push("/Home");
-        //   if (this.loginForm.rememberMe) {
-        //     Cookies.set("username", this.loginForm.username, { expires: 30 });
-        //     Cookies.set("password", encrypt(this.loginForm.password), {
-        //       expires: 30,
-        //     });
-        //     Cookies.set("rememberMe", this.loginForm.rememberMe, {
-        //       expires: 30,
-        //     });
-        //   } else {
-        //     Cookies.remove("username");
-        //     Cookies.remove("password");
-        //     Cookies.remove("rememberMe");
-        //   }
-        //   this.$store
-        //     .dispatch("Login", this.loginForm)
-        //     .then(() => {
-        //       //   this.getInfo();
-        //       this.$router.push("/Home");
-        //       // this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
-        //     })
-        //     .catch(() => {
-        //       this.loading = false;
-        //       this.$message.error("登陆失败");
-        //     });
+          this.$router.push("/home");
+          //   if (this.loginForm.rememberMe) {
+          //     Cookies.set("username", this.loginForm.username, { expires: 30 });
+          //     Cookies.set("password", encrypt(this.loginForm.password), {
+          //       expires: 30,
+          //     });
+          //     Cookies.set("rememberMe", this.loginForm.rememberMe, {
+          //       expires: 30,
+          //     });
+          //   } else {
+          //     Cookies.remove("username");
+          //     Cookies.remove("password");
+          //     Cookies.remove("rememberMe");
+          //   }
+          // this.$api.post("api/user/login", params).then((res) => {
+          //   if (res.err_code === 1) {
+          //     // 把用户的基本信息储存在vuex，中
+          //     this.$store.dispatch("setBaseInfo", res.data).then(() => {
+          //       // 获取有权限的路由表，添加到路由
+          //       router.addRoutes(this.$store.getters.addRouters);
+          //       this.$router.push({ name: "home" });
+          //     });
+          //   }
+          //   this.loading = false;
+          // });
+          //   this.$store
+          //     .dispatch("Login", this.loginForm)
+          //     .then(() => {
+          //       //   this.getInfo();
+          //       this.$router.push("/Home");
+          //       // this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
+          //     })
+          //     .catch(() => {
+          //       this.loading = false;
+          //       this.$message.error("登陆失败");
+          //     });
         }
       });
     },

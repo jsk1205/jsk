@@ -20,11 +20,11 @@ export default {
   data() {
     return {
       itemList: [
-        { path: "DataMana", title: "数据管理" },
-        { path: "LoginMana", title: "登陆日志" },
-        { path: "UserMana", title: "用户管理" },
-        { path: "RoleMana", title: "角色管理" },
-        { path: "MenuMana", title: "菜单管理" },
+        { path: "systemMana", title: "数据管理" },
+        { path: "systemLogin", title: "登陆日志" },
+        { path: "systemUser", title: "用户管理" },
+        { path: "systemRole", title: "角色管理" },
+        { path: "systemMenu", title: "菜单管理" },
       ],
     };
   },

@@ -64,7 +64,7 @@
 <script>
 import TagsView from "./TagsView/index.vue";
 export default {
-  name: "Home",
+  name: "home",
   components: {
     TagsView,
   },
@@ -72,27 +72,27 @@ export default {
     return {
       itemList: [
         // 水平一级菜单栏的菜单
-        { path: "/Home", title: "首页" },
-        { path: "/DataCollect", title: "数据收集" },
-        { path: "/DataSort", title: "数据整理" },
-        { path: "/DataRetrieval", title: "数据检索" },
+        { path: "home", title: "首页" },
+        { path: "dataCollect", title: "数据收集" },
+        { path: "dataSort", title: "数据整理" },
+        { path: "dataRetrieval", title: "数据检索" },
         {
-          path: "/DisSubsystem",
+          path: "disSub",
           title: "显示分系统",
           children: [
-            { path: "/DisMess", title: "统计信息" },
-            { path: "/SysMess", title: "系统信息" },
+            { path: "disSubDisMess", title: "统计信息" },
+            { path: "disSubSysMess", title: "系统信息" },
           ],
         },
         {
-          path: "/System",
+          path: "system",
           title: "系统管理",
           children: [
-            { path: "/DataMana", title: "数据管理" },
-            { path: "/LoginMana", title: "登陆日志" },
-            { path: "/UserMana", title: "用户管理" },
-            { path: "/RoleMana", title: "角色管理" },
-            { path: "/MenuMana", title: "菜单管理" },
+            { path: "systemMana", title: "数据管理" },
+            { path: "systemLogin", title: "登陆日志" },
+            { path: "systemUser", title: "用户管理" },
+            { path: "systemRole", title: "角色管理" },
+            { path: "systemMenu", title: "菜单管理" },
           ],
         },
       ],

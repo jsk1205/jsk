@@ -8,8 +8,10 @@ a{
 }
 .tags {
   height: 30px;
+  line-height: 30px;
   width: 100%;
-  /* background-color: sandybrown; */
+  background-color: #fff;
+  border-bottom: 1px solid rgb(169, 167, 167);
 }
 /* 页面主体部分 */
 .container {

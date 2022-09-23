@@ -137,7 +137,7 @@ export default {
     };
   },
   created() {
-    console.log(this.value1, "value1");
+    // console.log(this.value1, "value1");
   },
   methods: {
     onSubmit() {},
